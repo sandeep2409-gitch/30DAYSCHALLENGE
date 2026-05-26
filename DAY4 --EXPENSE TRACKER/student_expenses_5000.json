@@ -1,0 +1,158 @@
+{
+  "transactions": [
+    {
+      "id": "t-student-inc-1",
+      "description": "Monthly Pocket Money Allowance",
+      "amount": 4500,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-05-01",
+      "paymentMethod": "transfer",
+      "notes": "Monthly allowance from parents",
+      "tags": ["allowance", "parents"]
+    },
+    {
+      "id": "t-student-inc-2",
+      "description": "Freelance School Tutoring",
+      "amount": 1500,
+      "type": "income",
+      "category": "Freelance",
+      "date": "2026-05-12",
+      "paymentMethod": "transfer",
+      "notes": "Tutoring 8th-grade mathematics",
+      "tags": ["tutoring", "freelance"]
+    },
+    {
+      "id": "t-student-exp-1",
+      "description": "Monthly Bus Pass",
+      "amount": 600,
+      "type": "expense",
+      "category": "Transport",
+      "date": "2026-05-02",
+      "paymentMethod": "card",
+      "notes": "Student concessional transit pass",
+      "tags": ["bus", "commute"]
+    },
+    {
+      "id": "t-student-exp-2",
+      "description": "Mobile & Internet Recharge",
+      "amount": 349,
+      "type": "expense",
+      "category": "Utilities",
+      "date": "2026-05-03",
+      "paymentMethod": "card",
+      "notes": "Jio/Airtel 84 Days Student Pack",
+      "tags": ["mobile", "internet"]
+    },
+    {
+      "id": "t-student-exp-3",
+      "description": "Mess Groceries & Instant Noodles",
+      "amount": 850,
+      "type": "expense",
+      "category": "Groceries",
+      "date": "2026-05-05",
+      "paymentMethod": "cash",
+      "notes": "Rice, spices, tea, and Maggi pack",
+      "tags": ["groceries", "hostel"]
+    },
+    {
+      "id": "t-student-exp-4",
+      "description": "Engineering Reference Book",
+      "amount": 780,
+      "type": "expense",
+      "category": "Shopping",
+      "date": "2026-05-08",
+      "paymentMethod": "card",
+      "notes": "Textbook purchased from college bookstore",
+      "tags": ["academics", "books"]
+    },
+    {
+      "id": "t-student-exp-5",
+      "description": "Canteen Lunch with classmates",
+      "amount": 420,
+      "type": "expense",
+      "category": "Dining Out",
+      "date": "2026-05-10",
+      "paymentMethod": "cash",
+      "notes": "Samosas, Biryani, and Chai",
+      "tags": ["canteen", "friends"]
+    },
+    {
+      "id": "t-student-exp-6",
+      "description": "Hostel Room Fruits & Milk",
+      "amount": 350,
+      "type": "expense",
+      "category": "Groceries",
+      "date": "2026-05-14",
+      "paymentMethod": "cash",
+      "notes": "Bananas, apples, and milk packets",
+      "tags": ["groceries", "healthy"]
+    },
+    {
+      "id": "t-student-exp-7",
+      "description": "Movie & Popcorn Weekend",
+      "amount": 480,
+      "type": "expense",
+      "category": "Entertainment",
+      "date": "2026-05-18",
+      "paymentMethod": "card",
+      "notes": "Multiplex movie ticket with hostel mates",
+      "tags": ["movie", "weekend"]
+    },
+    {
+      "id": "t-student-exp-8",
+      "description": "Lab Manual Photocopying & Printouts",
+      "amount": 180,
+      "type": "expense",
+      "category": "Other Expense",
+      "date": "2026-05-22",
+      "paymentMethod": "cash",
+      "notes": "Photocopies of semester project reports",
+      "tags": ["academics", "xerox"]
+    },
+    {
+      "id": "t-student-exp-9",
+      "description": "Cafe Evening Coffee & Sandwich",
+      "amount": 320,
+      "type": "expense",
+      "category": "Dining Out",
+      "date": "2026-05-24",
+      "paymentMethod": "card",
+      "notes": "Late night study session at Starbucks/CCD",
+      "tags": ["cafe", "study"]
+    },
+    {
+      "id": "t-student-exp-10",
+      "description": "Medicines for Seasonal Fever",
+      "amount": 250,
+      "type": "expense",
+      "category": "Health",
+      "date": "2026-05-25",
+      "paymentMethod": "cash",
+      "notes": "Paracetamol and cough syrup from pharmacy",
+      "tags": ["health", "pharmacy"]
+    }
+  ],
+  "budgets": [
+    {
+      "id": "b-student-1",
+      "category": "Groceries",
+      "limit": 1500
+    },
+    {
+      "id": "b-student-2",
+      "category": "Dining Out",
+      "limit": 1000
+    },
+    {
+      "id": "b-student-3",
+      "category": "Transport",
+      "limit": 800
+    },
+    {
+      "id": "b-student-4",
+      "category": "Entertainment",
+      "limit": 600
+    }
+  ]
+}

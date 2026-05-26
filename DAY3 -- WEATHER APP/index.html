@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weather App - A premium, interactive weather dashboard built with Vue 3 and OpenWeatherMap API, featuring ambient dynamics, radial statistics, and detailed forecasts.">
+  <title>Weather App // Current Weather & Forecasts</title>
+
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Vue 3 Global Build CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+
+  <div id="app" v-cloak>
+    
+    <!-- Dynamic Ambient Backdrop Elements -->
+    <div class="ambient-backdrop" :class="weatherThemeClass">
+      <div class="backdrop-glow glow-1"></div>
+      <div class="backdrop-glow glow-2"></div>
+      <div class="backdrop-glow glow-3"></div>
+      
+      <!-- CSS Weather Effect Particles -->
+      <div class="weather-particles-overlay" v-if="hasActiveParticles">
+        <!-- Rain drops -->
+        <template v-if="weatherTheme === 'rain' || weatherTheme === 'thunderstorm'">
+          <div v-for="n in 30" :key="'rain-'+n" class="rain-drop" :style="getRandomRainStyle()"></div>
+        </template>
+        <!-- Snow particles -->
+        <template v-if="weatherTheme === 'snow'">
+          <div v-for="n in 40" :key="'snow-'+n" class="snow-flake" :style="getRandomSnowStyle()"></div>
+        </template>
+        <!-- Lightning Flashes -->
+        <div v-if="weatherTheme === 'thunderstorm'" class="lightning-flash"></div>
+      </div>
+    </div>
+
+    <!-- Toast Notification System -->
+    <transition name="toast-slide">
+      <div v-if="toast.show" class="toast-notification" :class="'toast-' + toast.type" role="status" aria-live="polite">
+        <span class="toast-icon">
+          <svg v-if="toast.type === 'success'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg v-else-if="toast.type === 'error'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        </span>
+        <span class="toast-message">{{ toast.message }}</span>
+      </div>
+    </transition>
+
+    <!-- App Container -->
+    <main class="app-wrapper">
+      
+      <!-- Top Navigation & Pinned Cities -->
+      <header class="app-header">
+        <div class="brand-bar">
+          <div class="logo-section">
+            <div class="logo-orb" :class="weatherThemeClass"></div>
+            <h1 class="logo-text">Weather<span>App</span></h1>
+          </div>
+        </div>
+
+
+        <!-- Favorites / Quick Bar -->
+        <div class="favorites-bar" aria-label="Pinned cities selection">
+          <button 
+            v-for="fav in favorites" 
+            :key="fav" 
+            class="fav-pill" 
+            :class="{ active: currentCity.toLowerCase() === fav.toLowerCase() }"
+            @click="selectFavorite(fav)"
+          >
+            <span class="fav-icon">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </span>
+            <span class="fav-name">{{ fav }}</span>
+          </button>
+          
+          <div v-if="favorites.length === 0" class="favorites-empty">
+            Tap the heart icon on any city to pin it here.
+          </div>
+        </div>
+
+        <!-- Dynamic Controls & Search Panel -->
+        <div class="controls-panel">
+          <div class="search-container" :class="{ 'has-focus': searchFocus }">
+            <span class="search-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input 
+              type="text" 
+              class="search-input" 
+              placeholder="Search cities (e.g. London, Tokyo)..."
+              v-model="searchQuery"
+              @focus="searchFocus = true"
+              @blur="handleSearchBlur"
+              @keydown.enter="triggerSearch"
+              @input="handleSearchInput"
+              aria-label="Search weather by city"
+            >
+            <button 
+              v-if="searchQuery" 
+              class="search-clear-btn" 
+              @click="searchQuery = ''; searchSuggestions = []" 
+              aria-label="Clear search input"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <!-- Search Autocomplete Suggestions -->
+            <transition name="suggest-fade">
+              <div v-if="searchFocus && searchSuggestions.length > 0" class="suggestions-dropdown" role="listbox">
+                <button 
+                  v-for="(item, index) in searchSuggestions" 
+                  :key="index"
+                  class="suggest-item"
+                  @mousedown="selectSuggestion(item)"
+                  role="option"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="suggest-pin-icon"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span class="suggest-name">{{ item.name }}</span>
+                  <span class="suggest-details" v-if="item.state || item.country">
+                    {{ item.state ? item.state + ', ' : '' }}{{ item.country }}
+                  </span>
+                </button>
+              </div>
+            </transition>
+          </div>
+
+          <div class="action-buttons">
+            <!-- GPS Location button -->
+            <button 
+              class="icon-action-btn gps-btn" 
+              :class="{ loading: gpsLoading }" 
+              @click="getUserLocation"
+              title="Locate via GPS"
+              aria-label="Locate me via GPS"
+            >
+              <svg v-if="!gpsLoading" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span v-else class="spinner-mini"></span>
+            </button>
+
+            <!-- Config / Settings button -->
+            <button 
+              class="icon-action-btn settings-trigger" 
+              @click="openSettings" 
+              title="Dashboard Settings"
+              aria-label="Open settings dashboard"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Grid Layout -->
+      <div class="dashboard-body" v-if="!loading && weather">
+        
+        <!-- Row 1: Hero Primary Info Card & Weather Details -->
+        <div class="dashboard-main-row">
+          
+          <!-- Large Glass Weather Card -->
+          <section class="card glass-card hero-card" aria-label="Current Weather Summary">
+            <!-- Pinned Heart Toggle -->
+            <button 
+              class="heart-pin-btn" 
+              :class="{ pinned: isPinned }"
+              @click="togglePinCity"
+              :aria-label="isPinned ? 'Unpin this city' : 'Pin this city'"
+              :title="isPinned ? 'Remove from favorites' : 'Pin to favorites'"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" :fill="isPinned ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+
+            <!-- City, Country & Clock -->
+            <div class="location-header">
+              <h2 class="city-title" id="primary-city">{{ weather.name }}</h2>
+              <span class="country-badge">{{ weather.sys.country }}</span>
+            </div>
+            
+            <div class="date-time-stamp">
+              <span>{{ localDateString }}</span>
+              <span class="time-sep">•</span>
+              <span>Local time: {{ localTimeString }}</span>
+            </div>
+
+            <!-- Dynamic Weather Illustration -->
+            <div class="weather-visual-container">
+              <div class="animated-weather-graphics" :class="weatherThemeClass">
+                <!-- Sunny / Clear Graphics -->
+                <div v-if="weatherTheme === 'clear'" class="gfx-clear">
+                  <div class="sun-sphere"></div>
+                  <div class="sun-ray ray-1"></div>
+                  <div class="sun-ray ray-2"></div>
+                  <div class="sun-ray ray-3"></div>
+                </div>
+
+                <!-- Cloudy Graphics -->
+                <div v-if="weatherTheme === 'clouds'" class="gfx-clouds">
+                  <div class="cloud-body cloud-back"></div>
+                  <div class="cloud-body cloud-front"></div>
+                </div>
+
+                <!-- Rainy Graphics -->
+                <div v-if="weatherTheme === 'rain'" class="gfx-rain">
+                  <div class="cloud-body cloud-rainy"></div>
+                  <div class="rain-showers">
+                    <div class="shower-drop sd-1"></div>
+                    <div class="shower-drop sd-2"></div>
+                    <div class="shower-drop sd-3"></div>
+                  </div>
+                </div>
+
+                <!-- Thunderstorm Graphics -->
+                <div v-if="weatherTheme === 'thunderstorm'" class="gfx-thunder">
+                  <div class="cloud-body cloud-stormy"></div>
+                  <div class="lightning-strike"></div>
+                  <div class="rain-showers">
+                    <div class="shower-drop sd-1"></div>
+                    <div class="shower-drop sd-2"></div>
+                  </div>
+                </div>
+
+                <!-- Snowy Graphics -->
+                <div v-if="weatherTheme === 'snow'" class="gfx-snow">
+                  <div class="cloud-body cloud-snowy"></div>
+                  <div class="snow-drift">
+                    <div class="drift-flake df-1"></div>
+                    <div class="drift-flake df-2"></div>
+                    <div class="drift-flake df-3"></div>
+                  </div>
+                </div>
+
+                <!-- Atmospheric / Mist Graphics -->
+                <div v-if="weatherTheme === 'atmosphere'" class="gfx-atmosphere">
+                  <div class="fog-bar fb-1"></div>
+                  <div class="fog-bar fb-2"></div>
+                  <div class="fog-bar fb-3"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Metrics Display -->
+            <div class="main-temperature-row">
+              <span class="temp-val">{{ Math.round(weather.main.temp) }}</span>
+              <span class="temp-degree-symbol">°</span>
+              <div class="units-toggle-pill">
+                <button 
+                  class="unit-btn" 
+                  :class="{ active: unitPreference === 'metric' }" 
+                  @click="toggleUnits('metric')"
+                >C</button>
+                <button 
+                  class="unit-btn" 
+                  :class="{ active: unitPreference === 'imperial' }" 
+                  @click="toggleUnits('imperial')"
+                >F</button>
+              </div>
+            </div>
+
+            <div class="weather-text-desc">
+              <span class="desc-main">{{ capitalizedDescription }}</span>
+              <span class="temp-feels-like">
+                Feels like <strong>{{ Math.round(weather.main.feels_like) }}°</strong>
+              </span>
+            </div>
+
+            <div class="min-max-inline">
+              <span class="temp-badge badge-high">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="19" x2="12" y2="5"></polygon><polyline points="5 12 12 5 19 12"></polyline></svg>
+                High: {{ Math.round(weather.main.temp_max) }}°
+              </span>
+              <span class="temp-badge badge-low">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></polygon><polyline points="19 12 12 19 5 12"></polyline></svg>
+                Low: {{ Math.round(weather.main.temp_min) }}°
+              </span>
+            </div>
+          </section>
+
+          <!-- Weather Conditions Secondary Grid -->
+          <div class="conditions-subgrid">
+            
+            <!-- Humidity Radial Gauge Card -->
+            <section class="card glass-card stat-card humidity-card" aria-label="Humidity details">
+              <h3 class="stat-card-title">Humidity</h3>
+              <div class="gauge-wrapper">
+                <svg class="radial-gauge" viewBox="0 0 36 36">
+                  <path class="gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="gauge-fill" :style="radialProgressStyle(weather.main.humidity)" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <div class="gauge-content">
+                  <span class="gauge-number">{{ weather.main.humidity }}</span>
+                  <span class="gauge-percent">%</span>
+                </div>
+              </div>
+              <span class="gauge-verdict">{{ getHumidityVerdict(weather.main.humidity) }}</span>
+            </section>
+
+            <!-- Wind Compass Pointer Card -->
+            <section class="card glass-card stat-card wind-card" aria-label="Wind speed and direction">
+              <h3 class="stat-card-title">Wind Speed</h3>
+              <div class="compass-widget">
+                <div class="compass-ring">
+                  <span class="compass-cardinal compass-n">N</span>
+                  <span class="compass-cardinal compass-e">E</span>
+                  <span class="compass-cardinal compass-s">S</span>
+                  <span class="compass-cardinal compass-w">W</span>
+                  <div class="compass-arrow" :style="{ transform: 'rotate(' + (weather.wind.deg || 0) + 'deg)' }">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 16,14 12,11 8,14"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="wind-metrics">
+                <span class="wind-val">{{ Math.round(weather.wind.speed * speedMultiplier) }}</span>
+                <span class="wind-unit">{{ speedUnit }}</span>
+                <span class="wind-direction-cardinal">({{ getWindCardinal(weather.wind.deg) }} / {{ weather.wind.deg || 0 }}°)</span>
+              </div>
+            </section>
+
+            <!-- Sunrise & Sunset Position Tracker -->
+            <section class="card glass-card stat-card sun-track-card" aria-label="Sunrise and sunset progress">
+              <h3 class="stat-card-title">Sun Cycle</h3>
+              <div class="sun-arc-container">
+                <svg class="sun-arc-svg" viewBox="0 0 100 50">
+                  <!-- Arc Path -->
+                  <path class="arc-track" d="M 5,45 A 40,40 0 0,1 95,45" fill="none" stroke-width="1.5" stroke-dasharray="2,2"/>
+                  <!-- Ground Line -->
+                  <line x1="0" y1="45" x2="100" y2="45" class="arc-ground" stroke-width="1"/>
+                  <!-- Glowing Pinned Sun Node -->
+                  <circle :cx="sunPos.x" :cy="sunPos.y" r="3" class="arc-sun" />
+                </svg>
+                
+                <div class="sun-hours-row">
+                  <div class="time-node node-sunrise">
+                    <span class="label-tiny">Sunrise</span>
+                    <span class="hour-val">{{ formatLocalUnixTime(weather.sys.sunrise) }}</span>
+                  </div>
+                  <div class="time-node node-sunset">
+                    <span class="label-tiny">Sunset</span>
+                    <span class="hour-val">{{ formatLocalUnixTime(weather.sys.sunset) }}</span>
+                  </div>
+                </div>
+              </div>
+              <span class="daylight-indicator">{{ sunCycleLabel }}</span>
+            </section>
+
+            <!-- Air Quality / Secondary Detail Indicators Grid -->
+            <section class="card glass-card stat-card grid-details-card" aria-label="Atmospheric indicators">
+              <h3 class="stat-card-title">Atmosphere</h3>
+              
+              <div class="grid-details-row">
+                <div class="detail-item">
+                  <span class="label-tiny">Visibility</span>
+                  <span class="detail-value">{{ formatVisibility(weather.visibility) }}</span>
+                  <div class="indicator-bar">
+                    <div class="indicator-fill" :style="{ width: Math.min((weather.visibility || 10000)/100, 100) + '%' }"></div>
+                  </div>
+                </div>
+                
+                <div class="detail-item">
+                  <span class="label-tiny">Barometric Pressure</span>
+                  <span class="detail-value">{{ weather.main.pressure }} <span class="label-tiny">hPa</span></span>
+                  <div class="indicator-bar">
+                    <!-- Standard pressure reference 1013hPa -->
+                    <div class="indicator-fill fill-pressure" :style="{ width: Math.min(Math.max((weather.main.pressure - 950) / 1.5, 0), 100) + '%' }"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+        <!-- Row 2: 24-Hour Forecast Timeline Slider -->
+        <section class="card glass-card timeline-card" aria-label="24-Hour Weather Forecast" v-if="hourlyForecasts.length > 0">
+          <h3 class="timeline-title">24-Hour Trend</h3>
+          
+          <div class="timeline-scroll-lane">
+            <div 
+              v-for="(hour, idx) in hourlyForecasts" 
+              :key="idx" 
+              class="timeline-item-card"
+              :class="{ 'is-now': idx === 0 }"
+            >
+              <span class="hour-stamp">{{ formatForecastHour(hour.dt) }}</span>
+              
+              <div class="timeline-gfx-wrap">
+                <svg v-if="hour.theme === 'clear'" viewBox="0 0 24 24" class="t-svg svg-clear"><circle cx="12" cy="12" r="5" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-dasharray="2,2"/></svg>
+                <svg v-else-if="hour.theme === 'clouds'" viewBox="0 0 24 24" class="t-svg svg-cloudy"><path d="M6 18a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 16h-12z" fill="currentColor"/></svg>
+                <svg v-else-if="hour.theme === 'rain'" viewBox="0 0 24 24" class="t-svg svg-rainy"><path d="M6 14a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 12h-12z" fill="currentColor"/><line x1="8" y1="17" x2="6" y2="20" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="17" x2="10" y2="20" stroke="currentColor" stroke-width="1.5"/><line x1="16" y1="17" x2="14" y2="20" stroke="currentColor" stroke-width="1.5"/></svg>
+                <svg v-else-if="hour.theme === 'thunderstorm'" viewBox="0 0 24 24" class="t-svg svg-stormy"><path d="M6 14a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 12h-12z" fill="currentColor"/><polygon points="13 14 9 19 12 19 10 24 16 17 12 17" fill="currentColor"/></svg>
+                <svg v-else-if="hour.theme === 'snow'" viewBox="0 0 24 24" class="t-svg svg-snowy"><path d="M6 14a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 12h-12z" fill="currentColor"/><circle cx="8" cy="18" r="1" fill="currentColor"/><circle cx="12" cy="19" r="1" fill="currentColor"/><circle cx="16" cy="18" r="1" fill="currentColor"/></svg>
+                <svg v-else viewBox="0 0 24 24" class="t-svg svg-atmosphere"><line x1="4" y1="10" x2="20" y2="10" stroke="currentColor" stroke-width="2"/><line x1="6" y1="14" x2="18" y2="14" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              
+              <span class="hour-temp">{{ Math.round(hour.main.temp) }}°</span>
+              <span class="hour-pop" v-if="hour.pop > 0">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                {{ Math.round(hour.pop * 100) }}%
+              </span>
+              <span class="hour-pop empty-pop" v-else>-</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Row 3: 5-Day Outlook Panels -->
+        <section class="card glass-card outlook-card" aria-label="5-Day Weather Forecast" v-if="dailyForecasts.length > 0">
+          <h3 class="outlook-title">5-Day Outlook</h3>
+          
+          <div class="outlook-list">
+            <div v-for="(day, idx) in dailyForecasts" :key="idx" class="outlook-row">
+              <span class="day-name">{{ formatForecastDay(day.dt) }}</span>
+              
+              <div class="outlook-icon-desc">
+                <div class="outlook-mini-gfx">
+                  <svg v-if="day.theme === 'clear'" viewBox="0 0 24 24" class="t-svg svg-clear"><circle cx="12" cy="12" r="5" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-dasharray="2,2"/></svg>
+                  <svg v-else-if="day.theme === 'clouds'" viewBox="0 0 24 24" class="t-svg svg-cloudy"><path d="M6 18a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 16h-12z" fill="currentColor"/></svg>
+                  <svg v-else-if="day.theme === 'rain'" viewBox="0 0 24 24" class="t-svg svg-rainy"><path d="M6 14a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 12h-12z" fill="currentColor"/><line x1="8" y1="17" x2="6" y2="20" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="17" x2="10" y2="20" stroke="currentColor" stroke-width="1.5"/><line x1="16" y1="17" x2="14" y2="20" stroke="currentColor" stroke-width="1.5"/></svg>
+                  <svg v-else-if="day.theme === 'thunderstorm'" viewBox="0 0 24 24" class="t-svg svg-stormy"><path d="M6 14a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 12h-12z" fill="currentColor"/><polygon points="13 14 9 19 12 19 10 24 16 17 12 17" fill="currentColor"/></svg>
+                  <svg v-else-if="day.theme === 'snow'" viewBox="0 0 24 24" class="t-svg svg-snowy"><path d="M6 14a4 4 0 0 1-1-7.87 6 6 0 0 1 10.87-2A4 4 0 0 1 18 12h-12z" fill="currentColor"/><circle cx="8" cy="18" r="1" fill="currentColor"/><circle cx="12" cy="19" r="1" fill="currentColor"/><circle cx="16" cy="18" r="1" fill="currentColor"/></svg>
+                  <svg v-else viewBox="0 0 24 24" class="t-svg svg-atmosphere"><line x1="4" y1="10" x2="20" y2="10" stroke="currentColor" stroke-width="2"/><line x1="6" y1="14" x2="18" y2="14" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <span class="outlook-desc">{{ capitalizeWord(day.weather[0].description) }}</span>
+              </div>
+
+              <!-- Humidity Indicator Pill -->
+              <span class="outlook-humidity" v-if="day.humidity">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                {{ day.humidity }}%
+              </span>
+
+              <!-- Temperature Visual Slider bar (Apple weather style!) -->
+              <div class="outlook-range-slider" v-if="day.temp">
+                <span class="low-temp">{{ Math.round(day.temp.min) }}°</span>
+                <div class="range-bar-track">
+                  <div 
+                    class="range-bar-fill"
+                    :style="forecastSliderStyle(day.temp.min, day.temp.max)"
+                  ></div>
+                </div>
+                <span class="high-temp">{{ Math.round(day.temp.max) }}°</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- App Loading Skeleton Skeletons -->
+      <div v-if="loading" class="dashboard-body skeleton-body" aria-hidden="true">
+        <div class="dashboard-main-row">
+          <div class="card glass-card hero-card skeleton-pulse" style="height: 380px;"></div>
+          <div class="conditions-subgrid">
+            <div class="card glass-card stat-card skeleton-pulse" style="height: 180px;" v-for="i in 4"></div>
+          </div>
+        </div>
+        <div class="card glass-card timeline-card skeleton-pulse" style="height: 160px;"></div>
+      </div>
+
+    </main>
+
+    <!-- Global App Footer -->
+    <footer class="app-footer">
+      <p>Created for Day 3 of 30 WebApps Challenge. Connected to OpenWeatherMap REST API.</p>
+    </footer>
+
+    <!-- Native Config Settings Dialog -->
+    <dialog id="settingsDialog" class="modal-dialog" closedby="any" aria-labelledby="settingsDialogTitle">
+      <div class="modal-header">
+        <h2 id="settingsDialogTitle" class="modal-title">Dashboard Settings</h2>
+        <button class="modal-close-btn" @click="closeSettings" aria-label="Close Settings Panel">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- OpenWeatherMap API Key -->
+        <div class="setting-item flex-column" v-if="!isVercel">
+          <div class="setting-label-block">
+            <label for="apiKeyInput" class="setting-label">OpenWeatherMap API Key (v2.5)</label>
+            <span class="setting-hint">
+              Generate a free key by signing up on <a href="https://openweathermap.org" target="_blank" rel="noopener">openweathermap.org</a>. Note: new keys can take up to 2-3 hours to activate.
+            </span>
+          </div>
+          <div class="key-input-row">
+            <input 
+              type="password" 
+              id="apiKeyInput" 
+              class="settings-input" 
+              placeholder="Paste your API key here..."
+              v-model="apiKey"
+              autocomplete="off"
+            >
+            <button class="btn-primary" @click="saveApiKey">Save</button>
+          </div>
+          <span v-if="apiKey" class="key-status-label status-active">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="vertical-align:middle; margin-right:3px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Key saved in browser memory.
+          </span>
+          <span v-else class="key-status-label status-inactive">
+            No API key saved. Please save a key to retrieve live weather data.
+          </span>
+        </div>
+
+        <!-- Secure Serverless Backend Proxy notification on Vercel -->
+        <div class="setting-item flex-column" v-if="isVercel">
+          <div class="setting-label-block">
+            <span class="setting-label">API Configuration</span>
+          </div>
+          <span class="key-status-label status-active" style="display:flex; align-items:center; gap:6px; background: rgba(52, 211, 153, 0.08); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid rgba(52, 211, 153, 0.2); color:#34d399; font-size:11px; font-weight: 500;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Secured Connection Active: Routing requests through your Vercel Serverless Function proxy.
+          </span>
+        </div>
+
+
+
+        <!-- Metric vs Imperial System selection -->
+        <div class="setting-item">
+          <div class="setting-label-block">
+            <span class="setting-label">Measurement System</span>
+            <span class="setting-hint">Select the units for temperatures, speed, and visibility.</span>
+          </div>
+          <div class="units-radio-group">
+            <label class="radio-tab" :class="{ selected: unitPreference === 'metric' }">
+              <input type="radio" v-model="unitPreference" value="metric" class="radio-hidden">
+              Metric (°C, m/s)
+            </label>
+            <label class="radio-tab" :class="{ selected: unitPreference === 'imperial' }">
+              <input type="radio" v-model="unitPreference" value="imperial" class="radio-hidden">
+              Imperial (°F, mph)
+            </label>
+          </div>
+        </div>
+
+        <!-- Manage Favorite Cities list -->
+        <div class="setting-item flex-column border-top">
+          <span class="setting-label">Manage Pinned Cities</span>
+          
+          <div class="settings-favorites-list">
+            <div v-for="fav in favorites" :key="fav" class="settings-fav-row">
+              <span class="fav-row-name">{{ fav }}</span>
+              <button 
+                class="fav-row-delete-btn" 
+                @click="removeFavorite(fav)" 
+                aria-label="Remove city from favorites"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            <div v-if="favorites.length === 0" class="fav-row-empty">
+              No cities pinned yet.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" @click="resetDashboardDefaults">Reset All Defaults</button>
+        <button class="btn-primary" @click="closeSettings">Apply & Close</button>
+      </div>
+    </dialog>
+
+  </div>
+
+  <!-- Main Vue Logic Code -->
+  <script src="app.js"></script>
+</body>
+</html>
