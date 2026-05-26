@@ -6,7 +6,8 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-
+.env.example
+.env.production
 # IDE configurations
 .vscode/
 .idea/
