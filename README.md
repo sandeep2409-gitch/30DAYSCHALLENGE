@@ -81,6 +81,7 @@ Repeat the same steps for any other day (e.g., `DAY3 -- WEATHER APP`).
 |-----|-----|-------------|-------------|
 | **Day 3** | **Weather App** | Minimal weather forecast UI using the OpenWeatherMap API (API key removed for security). | `cd "DAY3 -- WEATHER APP" && npm install && npm run dev` |
 | **Day 4** | **Expense Tracker** | Premium‑looking expense tracker with Chart.js visualisations, local‑storage persistence, and a sample Indian‑student budget (≤ ₹5 000). | `cd "DAY4 -- EXPENSE TRACKER" && npm install && npm run dev` |
+| **Day 10** | **Drawing App** | Premium responsive sketching workspace using HTML5 Canvas 2D, smooth quadratic bezier curves, custom brush/eraser presets, undo/redo state stacks, and PNG export. | `open "DAY10 -- DRAWING/index.html"` |
 
 *(Add additional rows as new days are completed.)*
 
@@ -123,3 +124,4 @@ This repository is licensed under the **MIT License** – feel free to clone, mo
 - Share your own builds using the hashtag `#30DaysWebApps`.
 
 Happy coding! 🎉
+# CINIVERSE
