@@ -1,0 +1,149 @@
+Day 1: Todo List
+- Tech Stack: React + LocalStorage
+- Key Feature: Add/delete/complete tasks
+- Folder Name: 01-todo-react
+
+Day 2: Calculator
+- Tech Stack: Vanilla JS + CSS
+- Key Feature: Basic arithmetic + history
+- Folder Name: 02-calculator-vanilla
+
+Day 3: Weather App
+- Tech Stack: Vue + OpenWeatherMap API
+- Key Feature: Search by city, show current weather
+- Folder Name: 03-weather-vue
+
+Day 4: Expense Tracker
+- Tech Stack: React + Chart.js
+- Key Feature: Log expenses, visualize spending
+- Folder Name: 04-expense-react
+
+Day 5: Countdown Timer
+- Tech Stack: Vanilla JS + HTML5
+- Key Feature: Pomodoro-style timer with sounds
+- Folder Name: 05-timer-vanilla
+
+Day 6: Color Palette Generator
+- Tech Stack: React
+- Key Feature: Random colors, copy hex codes
+- Folder Name: 06-color-palette-react
+
+Day 7: Markdown Previewer
+- Tech Stack: Vue + Marked.js
+- Key Feature: Write markdown, see preview
+- Folder Name: 07-markdown-vue
+
+Day 8: URL Shortener
+- Tech Stack: Node.js + Express + MongoDB
+- Key Feature: Create/view short URLs
+- Folder Name: 08-url-shortener-node
+
+Day 9: Quote Generator
+- Tech Stack: React + API
+- Key Feature: Random quotes with author
+- Folder Name: 09-quotes-react
+
+Day 10: Drawing App
+- Tech Stack: Canvas API + Vanilla JS
+- Key Feature: Draw, erase, clear canvas
+- Folder Name: 10-drawing-vanilla
+
+Day 11: Password Generator
+- Tech Stack: Vue
+- Key Feature: Customizable strong passwords
+- Folder Name: 11-password-vue
+
+Day 12: Music Playlist
+- Tech Stack: React + Spotify Web API
+- Key Feature: Search songs, build playlist
+- Folder Name: 12-playlist-react
+
+Day 13: Chat UI (No Backend)
+- Tech Stack: React
+- Key Feature: Message bubbles, animations
+- Folder Name: 13-chat-ui-react
+
+Day 14: Daily Journal
+- Tech Stack: Svelte + IndexedDB
+- Key Feature: Write entries, save offline
+- Folder Name: 14-journal-svelte
+
+Day 15: Notes App
+- Tech Stack: React + Firebase
+- Key Feature: Create/edit/delete notes, auth
+- Folder Name: 15-notes-firebase
+
+Day 16: GitHub User Finder
+- Tech Stack: Node.js + GitHub API
+- Key Feature: Search users, show repos
+- Folder Name: 16-github-finder-node
+
+Day 17: Movie Search Engine
+- Tech Stack: React + TMDB API
+- Key Feature: Search films, show ratings
+- Folder Name: 17-movies-react
+
+Day 18: E-commerce Cart
+- Tech Stack: Vue + Local State
+- Key Feature: Add to cart, checkout flow
+- Folder Name: 18-ecommerce-vue
+
+Day 19: Book Recommendation
+- Tech Stack: Python Flask + SQLite
+- Key Feature: Database of books, search/filter
+- Folder Name: 19-books-flask
+
+Day 20: Food Delivery App (UI)
+- Tech Stack: React
+- Key Feature: Browse restaurants, order flow
+- Folder Name: 20-foodapp-react
+
+Day 21: Stock Market Tracker
+- Tech Stack: Node.js + Alpha Vantage API
+- Key Feature: Real-time stock data, charts
+- Folder Name: 21-stocks-node
+
+Day 22: Handwriting Recognition
+- Tech Stack: Flask + TensorFlow
+- Key Feature: Draw digit, predict with ML
+- Folder Name: 22-handwriting-flask
+
+Day 23: Real-time Chat
+- Tech Stack: Node.js + Socket.io
+- Key Feature: WebSockets, multiple users
+- Folder Name: 23-chat-socket-node
+
+Day 24: AI Text Summarizer
+- Tech Stack: Python + Hugging Face
+- Key Feature: Paste text, get summary
+- Folder Name: 24-summarizer-python
+
+Day 25: Kanban Board
+- Tech Stack: React + Drag-Drop
+- Key Feature: Trello-like task management
+- Folder Name: 25-kanban-react
+
+Day 26: Music Visualizer
+- Tech Stack: Web Audio API + Three.js
+- Key Feature: Animated frequency spectrum
+- Folder Name: 26-visualizer-vanilla
+
+Day 27: Code Snippet Manager
+- Tech Stack: React + MongoDB + Node.js
+- Key Feature: Save, search, syntax highlight
+- Folder Name: 27-snippets-mern
+
+Day 28: Sentiment Analysis
+- Tech Stack: Flask + NLP
+- Key Feature: Analyze text emotion
+- Folder Name: 28-sentiment-flask
+
+Day 29: Real Estate Portal
+- Tech Stack: React + Node.js + PostgreSQL
+- Key Feature: Property listings, filtering
+- Folder Name: 29-realestate-full-stack
+
+Day 30: Capstone: Personal Portfolio
+- Tech Stack: React + Next.js
+- Key Feature: Showcase your 29 apps!
+- Folder Name: 30-portfolio-nextjs
