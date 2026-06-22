@@ -16,7 +16,7 @@ export async function GET(request) {
   }
 
   try {
-    // process.cwd() is the '30-portfolio-nextjs' directory
+    // process.cwd() is the 'DAY30 -- PORTFOLIO' directory
     const parentDir = path.resolve(process.cwd(), '..');
     const readmePath = path.join(parentDir, folder, 'README.md');
 

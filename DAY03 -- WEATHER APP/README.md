@@ -59,12 +59,12 @@ This ensures **100% real-time data**, **zero mock dummy states**, and **absolute
 To host this Weather App securely with real-time data:
 
 1. **Upload your code to GitHub**:
-   Push this directory (`DAY3 -- WEATHER APP`) to your GitHub account. Your files are completely safe to share as they contain **no hardcoded keys**!
+   Push this directory (`DAY03 -- WEATHER APP`) to your GitHub account. Your files are completely safe to share as they contain **no hardcoded keys**!
    
 2. **Import into Vercel**:
    - Go to your [Vercel Dashboard](https://vercel.com/) and click **Add New Project**.
    - Import your repository.
-   - If deploying this folder as a standalone app, configure the **Root Directory** as `DAY3 -- WEATHER APP`.
+   - If deploying this folder as a standalone app, configure the **Root Directory** as `DAY03 -- WEATHER APP`.
 
 3. **Configure Environment Variables**:
    - In Vercel's build settings under **Environment Variables**, add a new entry:
@@ -93,7 +93,7 @@ To run the full backend proxy environment on your computer:
 
 ## 📁 Repository Structure
 ```
-DAY3 -- WEATHER APP/
+DAY03 -- WEATHER APP/
 ├── api/
 │   └── weather.js   # Secure Vercel Serverless Function Proxy (Node.js)
 ├── index.html       # Dynamic Vue template structure & layout grids

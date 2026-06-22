@@ -5,7 +5,7 @@
     "name": "todo-list",
     "techStack": ["React", "LocalStorage", "CSS"],
     "keyFeature": "Add, complete, and delete tasks with local persistence.",
-    "folderName": "DAY1 --TODO LIST WEBAPP",
+    "folderName": "DAY01 --TODO LIST WEBAPP",
     "runCommand": "npm install && npm run dev",
     "description": "A highly interactive, fluid task management application featuring category filtering, statistics, and dark mode support. Persists data locally so you never lose your progress.",
     "learnings": [
@@ -22,7 +22,7 @@
     "name": "CalcuFrost",
     "techStack": ["Vanilla JS", "CSS", "HTML5"],
     "keyFeature": "Basic arithmetic operations with memory history stack.",
-    "folderName": "DAY2 -- CALCULATOR APP",
+    "folderName": "DAY02 -- CALCULATOR APP",
     "runCommand": "open index.html",
     "description": "A sleek, neumorphic calculator supporting keyboard inputs, backspacing, chaining calculations, and a slide-out drawer containing your calculation history.",
     "learnings": [
@@ -39,7 +39,7 @@
     "name": "weather-app",
     "techStack": ["Vue", "OpenWeatherMap API", "CSS"],
     "keyFeature": "Real-time weather search with detailed climate data.",
-    "folderName": "DAY3 -- WEATHER APP",
+    "folderName": "DAY03 -- WEATHER APP",
     "runCommand": "npm install && npm run dev",
     "description": "A beautiful weather dashboard displaying current temperatures, humidity, wind speeds, and visual indicators corresponding to weather conditions.",
     "learnings": [
@@ -56,7 +56,7 @@
     "name": "expense-tracker",
     "techStack": ["React", "Chart.js", "CSS"],
     "keyFeature": "Premium expense tracker with Chart.js charts and local backup/restore.",
-    "folderName": "DAY4 --EXPENSE TRACKER",
+    "folderName": "DAY04 --EXPENSE TRACKER",
     "runCommand": "npm install && npm run dev",
     "description": "A high-fidelity personal finance dashboard and smart budget visualizer. Features modern glassmorphic theme variations, category budget limits with warning progress bars, and CSV/JSON data exporting.",
     "learnings": [
@@ -73,7 +73,7 @@
     "name": "Countdown-timer",
     "techStack": ["Vanilla JS", "HTML5 Audio", "CSS"],
     "keyFeature": "Pomodoro-style timer with audio warnings and intervals.",
-    "folderName": "DAY5 -- COUNTDOWN TIMER",
+    "folderName": "DAY05 -- COUNTDOWN TIMER",
     "runCommand": "open index.html",
     "description": "A customizable timer designed for productivity. Features play, pause, and reset controls with dynamic circular progress indicators and alert sounds.",
     "learnings": [
@@ -90,7 +90,7 @@
     "name": "colour-gen",
     "techStack": ["React", "CSS", "Clipboard API"],
     "keyFeature": "Generate randomized cohesive color schemes and export hex codes.",
-    "folderName": "DAY6 --COLOUR PALETTE GEN",
+    "folderName": "DAY06 --COLOUR PALETTE GEN",
     "runCommand": "npm install && npm run dev",
     "description": "An interactive designer tool that generates beautiful color palettes. Allows locking colors, visualizes contrast ratios, and supports quick hex copying.",
     "learnings": [
@@ -107,7 +107,7 @@
     "name": "MARKDUP",
     "techStack": ["Vue", "Marked.js", "CSS"],
     "keyFeature": "Real-time markdown compilation and structural rendering.",
-    "folderName": "DAY7 --MARKDOWN PREVIEWER",
+    "folderName": "DAY07 --MARKDOWN PREVIEWER",
     "runCommand": "npm install && npm run dev",
     "description": "A split-pane editor allowing users to write standard markdown on the left and see compiled, styled HTML structure rendered live on the right.",
     "learnings": [
@@ -124,7 +124,7 @@
     "name": "trimly",
     "techStack": ["Node.js", "Express", "MongoDB", "CSS"],
     "keyFeature": "Generate and redirect short links with custom aliases.",
-    "folderName": "DAY8 --URL SHORTNER",
+    "folderName": "DAY08 --URL SHORTNER",
     "runCommand": "npm install && npm start",
     "description": "A backend service exposing REST endpoints to compress long URLs, record redirection click analytics, and support custom back-half naming.",
     "learnings": [
@@ -141,7 +141,7 @@
     "name": "AuraQuotes",
     "techStack": ["React", "Fetch API", "CSS"],
     "keyFeature": "Retrieve quotes with author information and share instantly.",
-    "folderName": "DAY9 --QUOTE GENERATOR",
+    "folderName": "DAY09 --QUOTE GENERATOR",
     "runCommand": "npm install && npm run dev",
     "description": "A card dashboard that fetches random inspirational quotes from a public API, displays typewriter animations, and facilitates instant sharing via Twitter.",
     "learnings": [
@@ -495,10 +495,10 @@
   {
     "day": 30,
     "week": 4,
-    "name": "30-portfolio-nextjs",
+    "name": "Portfolio Capstone",
     "techStack": ["React", "Next.js", "Marked.js", "CSS"],
     "keyFeature": "Dynamic developer portfolio dashboard aggregating all 29 projects.",
-    "folderName": "30-portfolio-nextjs",
+    "folderName": "DAY30 -- PORTFOLIO",
     "runCommand": "npm install && npm run dev",
     "description": "The capstone project of the 30-Day challenge. Aggregates all daily challenge progress metrics, technology frequency graphs, and features an inline dynamic Markdown parser.",
     "learnings": [

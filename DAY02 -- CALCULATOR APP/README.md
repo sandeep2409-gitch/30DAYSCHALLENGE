@@ -70,7 +70,7 @@ Since this app is built purely with standard client-side web technologies, no bu
 
 1. Clone or navigate to the folder:
    ```bash
-   cd "DAY2 -- CALCULATOR APP"
+   cd "DAY02 -- CALCULATOR APP"
    ```
 2. Double-click `index.html` to open it directly in any modern browser, or run a simple local development server:
    ```bash
