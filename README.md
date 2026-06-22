@@ -1,127 +1,87 @@
-# 30‑Days Web Apps Challenge 🚀
+# 30-Days Web Apps Challenge 🚀
 
-Welcome to the **30‑Days Web Apps Challenge** – a hands‑on learning journey where we build a fresh web application every day for 30 days. Each day focuses on a different use‑case, technology stack, and design pattern, helping you sharpen your front‑end skills, explore modern tooling, and build a portfolio of polished projects.
+Welcome to the **30-Days Web Apps Challenge** – an intensive, hands-on learning journey where we build a fresh, self-contained web application every single day. 
 
----
-
-## 📚 About the Challenge
-
-- **Goal**: Create 30 small yet fully functional web apps (React, Vite, vanilla JS, etc.) in 30 days.
-- **Daily workflow** (≈30 min):
-  1️⃣ **Build** – Code the app (6‑8 h total per day, but the core implementation fits in a few hours).
-  2️⃣ **Document** – Add a README, screenshots, and a brief description (≈15 min).
-  3️⃣ **Push** – Commit and push to GitHub (≈5 min).
-  4️⃣ **Post** – Share on LinkedIn or Twitter with a link to the repo (≈10 min).
-- **Tools**:
-  - Node / npm (React, Vite, Chart.js, etc.)
-  - Python/Flask for optional back‑ends
-  - VS Code, Postman, Git
-
-> For the full daily checklist and optional tooling, see `files/30‑webapps‑challenge‑guide.md`.
+This repository documents the entire curriculum: 28 daily web apps built across 4 distinct weeks of coding, capped off by the **Day 30 Personal Portfolio Capstone** (a dynamic Next.js dashboard that links, describes, and compiles social media updates for each project).
 
 ---
 
-## 📂 Repository Structure
-
-```
-30‑DAYS‑CHALLENGE/
-├─ DAY1 – <app‑name>/
-├─ DAY2 – <app‑name>/
-├─ DAY3 – WEATHER APP/
-│   ├─ src/ …
-│   └─ .env.example   # (removed secret before push)
-├─ DAY4 – EXPENSE TRACKER/
-│   ├─ src/ …
-│   └─ student_expenses_5000.json
-├─ DAY5 – …
-│   …
-├─ files/
-│   └─ 30‑webapps‑challenge‑guide.md
-└─ README.md   ← (this file)
-```
-
-Each **DAY‑** folder contains a self‑contained project with its own `package.json`. The top‑level repo is a plain Git workspace that aggregates all daily apps.
+## 🌟 Capstone Project: Day 30 Personal Portfolio
+The final milestone is a premium **Developer Portfolio** designed to dynamically showcase all daily projects.
+* **Location:** [`30-portfolio-nextjs/`](./30-portfolio-nextjs/)
+* **Tech Stack:** React, Next.js (App Router), Vanilla CSS, Lucide Icons, Marked (dynamic Markdown compiler).
+* **Key Features:**
+  * **Dynamic README.md Reader:** Directly reads and compiles the raw `README.md` markdown file for each day from the workspace filesystem in a beautiful modal overlay.
+  * **Interactive Filter Hub:** Search projects dynamically by name, description keyword, or specific tech stack. Filter by week/challenge themes.
+  * **LinkedIn Post Compiler:** Compile, preview, and copy structured LinkedIn update posts for each day with a single click.
+  * **Dynamic Tech Frequency Stats:** A dynamic dashboard showing framework frequency stats (React, Vue, Svelte, Flask, Node, etc.) and week-by-week completion rates.
+  * **Aesthetic Accents:** Ambient background space gradients, glassmorphism panel styles, and smooth scroll animations.
 
 ---
 
-## ⚡ Getting Started
+## 📅 Daily Challenge Roadmap
 
-### Prerequisites
+| Day | Project Name | Primary Stack | Key Highlights & Features | Local Directory | GitHub Repository |
+|:---:|---|---|---|---|---|
+| **01** | **todo-list** | React, LocalStorage, CSS | Minimalism todo board with dynamic progress indicators and PWA offline capability. | [`DAY1 --TODO LIST WEBAPP`](./DAY1%20--TODO%20LIST%20WEBAPP/) | [GitHub](https://github.com/sandeep2409-gitch/todo-list) |
+| **02** | **CalcuFrost** | Vanilla JS, Neumorphism CSS | Neumorphic scientific calculator with slide-out expressions history stack. | [`DAY2 -- CALCULATOR APP`](./DAY2%20--%20CALCULATOR%20APP/) | [GitHub](https://github.com/sandeep2409-gitch/CalcuFrost) |
+| **03** | **weather-app** | Vue 3, OpenWeatherMap API | Real-time weather searching with dynamic backgrounds adapting to temperature. | [`DAY3 -- WEATHER APP`](./DAY3%20--%20WEATHER%20APP/) | [GitHub](https://github.com/sandeep2409-gitch/weather-app) |
+| **04** | **Countdown-timer** | Vanilla JS, Audio Context | Pomodoro productivity timer with SVG circular progress rings and ring alerts. | [`DAY5 -- COUNTDOWN TIMER`](./DAY5%20--%20COUNTDOWN%20TIMER/) | [GitHub](https://github.com/sandeep2409-gitch/Countdown-timer) |
+| **05** | **colour-gen** | React, Clipboard API | Programmable color picker that locks hex codes and measures contrast ratios. | [`DAY6 --COLOUR PALETTE GEN`](./DAY6%20--COLOUR%20PALETTE%20GEN/) | [GitHub](https://github.com/sandeep2409-gitch/colour-gen) |
+| **06** | **MARKDUP** | Vue 3, Marked.js, DOMPurify | Side-by-side Markdown editor compiling structured HTML layout in real time. | [`DAY7 --MARKDOWN PREVIEWER`](./DAY7%20--MARKDOWN%20PREVIEWER/) | [GitHub](https://github.com/sandeep2409-gitch/MARKDUP) |
+| **07** | **trimly** | Node.js, Express, MongoDB | URL compression service with click tracking analytics and custom aliases. | [`DAY8 --URL SHORTNER`](./DAY8%20--URL%20SHORTNER/) | [GitHub](https://github.com/sandeep2409-gitch/trimly) |
+| **08** | **AuraQuotes** | React, Fetch API, CSS | Random quote generator card featuring dynamic author pages and Twitter share hooks. | [`DAY9 --QUOTE GENERATOR`](./DAY9%20--QUOTE%20GENERATOR/) | [GitHub](https://github.com/sandeep2409-gitch/AuraQuotes) |
+| **09** | **Canvas-studio** | Canvas API, Vanilla JS | Full responsive painting board with brush width selectors, colors, and PNG export. | [`DAY10 -- DRAWING`](./DAY10%20--%20DRAWING/) | [GitHub](https://github.com/sandeep2409-gitch/Canvas-studio) |
+| **10** | **FortifyGen** | Vue 3, Web Crypto API | Cryptographic-strength password compiler with entropy strength metrics. | [`DAY11--PASSWORD GENERATOR`](./DAY11--PASSWORD%20GENERATOR/) | [GitHub](https://github.com/sandeep2409-gitch/FortifyGen) |
+| **11** | **VibeStream** | React, Spotify API OAuth2 | Full Spotify playlist builder syncing tracks directly back to user accounts. | [`DAY12 -- MUSIC PLAYLIST`](./DAY12%20--%20MUSIC%20PLAYLIST/) | [GitHub](https://github.com/sandeep2409-gitch/VibeStream) |
+| **12** | **nvidia-nim-chatbot** | React, CSS keyframes | Mock AI chat interface with auto-scrolling lists and staggered typing delays. | [`DAY13 -- CHATBOT`](./DAY13%20--%20CHATBOT/) | [GitHub](https://github.com/sandeep2409-gitch/nvidia-nim-chatbot) |
+| **13** | **AuraJournal** | Svelte, IndexedDB, CSS | Offline-first daily journal storing rich text logs inside the browser database. | [`DAY14 --DAILY JOURNAL`](./DAY14%20--DAILY%20JOURNAL/) | [GitHub](https://github.com/sandeep2409-gitch/AuraJournal) |
+| **14** | **AetherNotes** | React, Firebase Firestore | Multi-account collaborative note-taking app with real-time snapshot sync. | [`DAY15 --NOTES APP`](./DAY15%20--NOTES%20APP/) | [GitHub](https://github.com/sandeep2409-gitch/AetherNotes) |
+| **15** | **Gitfinderpro** | Node.js, GitHub REST API | Account query dashboard presenting language graphs and repository statistics. | [`DAY16 --GITHUB USER FINDER`](./DAY16%20--GITHUB%20USER%20FINDER/) | [GitHub](https://github.com/sandeep2409-gitch/Gitfinderpro) |
+| **16** | **CINIVERSE** | React, TMDB REST API | Entertainment search portal with infinite scrolling grids and detailed overlays. | [`DAY17 -- MOVIES SEARCH ENGINEE`](./DAY17%20--%20MOVIES%20SEARCH%20ENGINEE/) | [GitHub](https://github.com/sandeep2409-gitch/CINIVERSE) |
+| **17** | **KAIZENDESK** | Vue 3, Pinia / Vuex | Ecommerce cart manager calculating subtotals, coupon cuts, and checkout steps. | [`DAY18 -- ECOMMERCE CART`](./DAY18%20--%20ECOMMERCE%20CART/) | [GitHub](https://github.com/sandeep2409-gitch/KAIZENDESK) |
+| **18** | **AuraReads** | Python Flask, SQLite | Curated book recommendation database filtering by genres and user comments. | [`DAY19 -- BOOK RECOMENDER`](./DAY19%20--%20BOOK%20RECOMENDER/) | [GitHub](https://github.com/sandeep2409-gitch/AuraReads) |
+| **19** | **BiteDash** | React, CSS animations | Restaurant dashboard with dish configuration grids and interactive maps. | [`DAY20 -- FOOD APP`](./DAY20%20--%20FOOD%20APP/) | [GitHub](https://github.com/sandeep2409-gitch/BiteDash) |
+| **20** | **RECONX** | Node.js, Alpha Vantage API | Corporate finance dashboard showing stock history lines with Chart.js. | [`DAY21 -- RECONX`](./DAY21%20--%20RECONX/) | [GitHub](https://github.com/sandeep2409-gitch/RECONX) |
+| **21** | **DigitPrediction** | Python, TensorFlow CNN | Machine Learning digit recognition canvas predicting drawings in real time. | [`DAY22 -- HANDWRITING RECOGINTION`](./DAY22%20--%20HANDWRITING%20RECOGINTION/) | [GitHub](https://github.com/sandeep2409-gitch/DigitPredictionUsingPython) |
+| **22** | **ChatHaven** | Node.js, Socket.io | WebSockets real-time chat supporting custom chatrooms and active member logs. | [`DAY23 --REALTIME CHAT`](./DAY23%20--REALTIME%20CHAT/) | [GitHub](https://github.com/sandeep2409-gitch/ChatHaven) |
+| **23** | **Aisummerygen** | Python Flask, HuggingFace | NLP summarization card using transformer pipelines to extract text details. | [`DAY24 -- AI TEXT SUMMARIZER`](./DAY24%20--%20AI%20TEXT%20SUMMARIZER/) | [GitHub](https://github.com/sandeep2409-gitch/Aisummerygeneration) |
+| **24** | **AtherBoard** | React, HTML5 Drag & Drop | Trello-like column card manager supporting list re-ordering and status tags. | [`DAY25 -- KANBAN BOARD`](./DAY25%20--%20KANBAN%20BOARD/) | [GitHub](https://github.com/sandeep2409-gitch/AtherBoard) |
+| **25** | **music-visualizer** | Web Audio API, Three.js | 3D music spectrum analyzer drawing audio frequencies to particle meshes. | [`DAY26 -- MUSIC VISUALIZER`](./DAY26%20--%20MUSIC%20VISUALIZER/) | [GitHub](https://github.com/sandeep2409-gitch/music-visualizer) |
+| **26** | **DevSnippet** | React, MongoDB, PrismJS | Multi-language code library manager with syntax highlights and text search. | [`DAY27 -- CODE SNIPPET MANAGER`](./DAY27%20--%20CODE%20SNIPPET%20MANAGER/) | [GitHub](https://github.com/sandeep2409-gitch/DevSnippet) |
+| **27** | **Sentiment-analysis**| Python Flask, TextBlob NLP | Text parser calculating sentiment polarity and rendering results to dial indicators. | [`DAY28 --SENTIMENT ANALYSIS`](./DAY28%20--SENTIMENT%20ANALYSIS/) | [GitHub](https://github.com/sandeep2409-gitch/Sentiment-analysis) |
+| **28** | **PrimeRealestate** | React, PostgreSQL | Real estate database listing with maps, filters, and dynamic queries. | [`DAY29 -- REAL ESTATE PORTAL`](./DAY29%20--%20REAL%20ESTATE%20PORTAL/) | [GitHub](https://github.com/sandeep2409-gitch/PrimeRealestate) |
 
-- **Node.js ≥ 20** (recommended) – install from <https://nodejs.org/>.
-- **Git** – already set up for this repository.
-- Optionally **Python 3** if you experiment with the Flask back‑ends.
+---
 
-### Clone the repository
+## ⚡ Getting Started & Running Locally
 
+### 1. Running the Capstone Portfolio Dashboard
+To view and navigate all projects through the interactive dashboard:
 ```bash
-git clone https://github.com/sandeep2409-gitch/30-DAYS-CHALLENGE.git
-cd 30-DAYS-CHALLENGE
-```
+# Navigate to the portfolio folder
+cd 30-portfolio-nextjs
 
-### Run a specific day’s app
-
-Navigate into the day folder, install dependencies, and start the dev server:
-
-```bash
-# Example: Day 4 – Expense Tracker
-cd "DAY4 -- EXPENSE TRACKER"
+# Install dependencies
 npm install
+
+# Start Next.js development server
 npm run dev
-# Open http://localhost:5173 in your browser
+```
+Open **`http://localhost:3000`** in your browser to view the application.
+
+### 2. Running a Day-Wise App
+Each project contains its own configuration and dependencies. Navigate into any project folder to run it.
+```bash
+# Example: Day 1 (todo-list)
+cd "DAY1 --TODO LIST WEBAPP"
+npm install
+npm run dev # or npm start depending on the stack
 ```
 
-Repeat the same steps for any other day (e.g., `DAY3 -- WEATHER APP`).
-
----
-
-## 📅 Highlighted Apps (so far)
-
-| Day | App | Description | Run Command |
-|-----|-----|-------------|-------------|
-| **Day 3** | **Weather App** | Minimal weather forecast UI using the OpenWeatherMap API (API key removed for security). | `cd "DAY3 -- WEATHER APP" && npm install && npm run dev` |
-| **Day 4** | **Expense Tracker** | Premium‑looking expense tracker with Chart.js visualisations, local‑storage persistence, and a sample Indian‑student budget (≤ ₹5 000). | `cd "DAY4 -- EXPENSE TRACKER" && npm install && npm run dev` |
-| **Day 10** | **Drawing App** | Premium responsive sketching workspace using HTML5 Canvas 2D, smooth quadratic bezier curves, custom brush/eraser presets, undo/redo state stacks, and PNG export. | `open "DAY10 -- DRAWING/index.html"` |
-
-*(Add additional rows as new days are completed.)*
-
----
-
-## 📸 Screenshots
-
-> Add screenshots for each day in the corresponding folder’s `README.md` or a central `docs/` folder. Use the markdown image syntax, e.g.:
->
-> ```markdown
-> ![Expense Tracker dashboard](DAY4%20--%20EXPENSE%20TRACKER/screenshots/dashboard.png)
-> ```
-
----
-
-## 🤝 Contributing
-
-1. **Fork** the repository.
-2. Create a new branch for your day’s app:
-   ```bash
-   git checkout -b day5‑my‑new‑app
-   ```
-3. Add your project under a new `DAY5 – <App Name>` folder.
-4. Follow the same **README + screenshot** pattern as existing days.
-5. Open a **Pull Request** – we’ll review and merge!
-
-Please keep the repo clean: no API keys or secrets should be committed. If you need environment variables, add them to `.env.example` with placeholder values and list the real keys in a private location.
+Refer to the **Workspace Run Specifications** inside the details modal of each project in the portfolio app for precise folder names and launch commands.
 
 ---
 
 ## 📄 License
-
-This repository is licensed under the **MIT License** – feel free to clone, modify, and share the projects.
-
----
-
-## 📣 Stay Connected
-
-- Follow the author on **LinkedIn** and **Twitter** for daily updates.
-- Share your own builds using the hashtag `#30DaysWebApps`.
-
-Happy coding! 🎉
-# CINIVERSE
+This repository is licensed under the **MIT License** – feel free to clone, modify, and build upon these projects.

@@ -1,0 +1,478 @@
+[
+  {
+    "day": 1,
+    "week": 1,
+    "name": "todo-list",
+    "techStack": ["React", "LocalStorage", "CSS"],
+    "keyFeature": "Add, complete, and delete tasks with local persistence.",
+    "folderName": "DAY1 --TODO LIST WEBAPP",
+    "runCommand": "npm install && npm run dev",
+    "description": "A highly interactive, fluid task management application featuring category filtering, statistics, and dark mode support. Persists data locally so you never lose your progress.",
+    "learnings": [
+      "Mastered React functional components and hooks (useState, useEffect).",
+      "Implemented state persistence using the browser's LocalStorage API.",
+      "Created a robust CSS variables system for light/dark mode toggling."
+    ],
+    "icon": "CheckSquare",
+    "githubUrl": "https://github.com/sandeep2409-gitch/todo-list"
+  },
+  {
+    "day": 2,
+    "week": 1,
+    "name": "CalcuFrost",
+    "techStack": ["Vanilla JS", "CSS", "HTML5"],
+    "keyFeature": "Basic arithmetic operations with memory history stack.",
+    "folderName": "DAY2 -- CALCULATOR APP",
+    "runCommand": "open index.html",
+    "description": "A sleek, neumorphic calculator supporting keyboard inputs, backspacing, chaining calculations, and a slide-out drawer containing your calculation history.",
+    "learnings": [
+      "Built structured JS event listeners to handle mouse and keyboard inputs.",
+      "Implemented parsing expressions safely without using eval() to prevent security issues.",
+      "Learned neumorphic styling techniques (soft shadows, light source alignment)."
+    ],
+    "icon": "Calculator",
+    "githubUrl": "https://github.com/sandeep2409-gitch/CalcuFrost"
+  },
+  {
+    "day": 3,
+    "week": 1,
+    "name": "weather-app",
+    "techStack": ["Vue", "OpenWeatherMap API", "CSS"],
+    "keyFeature": "Real-time weather search with detailed climate data.",
+    "folderName": "DAY3 -- WEATHER APP",
+    "runCommand": "npm install && npm run dev",
+    "description": "A beautiful weather dashboard displaying current temperatures, humidity, wind speeds, and visual indicators corresponding to weather conditions.",
+    "learnings": [
+      "Learned Vue 3 Composition API basics and reactive binding syntax.",
+      "Integrated third-party RESTful APIs (OpenWeatherMap) using fetch.",
+      "Implemented dynamic CSS bindings to shift background images based on target temperature."
+    ],
+    "icon": "CloudSun",
+    "githubUrl": "https://github.com/sandeep2409-gitch/weather-app"
+  },
+  {
+    "day": 4,
+    "week": 1,
+    "name": "Countdown-timer",
+    "techStack": ["Vanilla JS", "HTML5 Audio", "CSS"],
+    "keyFeature": "Pomodoro-style timer with audio warnings and intervals.",
+    "folderName": "DAY5 -- COUNTDOWN TIMER",
+    "runCommand": "open index.html",
+    "description": "A customizable timer designed for productivity. Features play, pause, and reset controls with dynamic circular progress indicators and alert sounds.",
+    "learnings": [
+      "Managed precision timings in JS using setInterval and requestAnimationFrame.",
+      "Manipulated SVG stroke-dashoffset dynamically to create a smooth circular progress indicator.",
+      "Implemented browser audio playback using the HTML5 Audio interface."
+    ],
+    "icon": "Timer",
+    "githubUrl": "https://github.com/sandeep2409-gitch/Countdown-timer"
+  },
+  {
+    "day": 5,
+    "week": 1,
+    "name": "colour-gen",
+    "techStack": ["React", "CSS", "Clipboard API"],
+    "keyFeature": "Generate randomized cohesive color schemes and export hex codes.",
+    "folderName": "DAY6 --COLOUR PALETTE GEN",
+    "runCommand": "npm install && npm run dev",
+    "description": "An interactive designer tool that generates beautiful color palettes. Allows locking colors, visualizes contrast ratios, and supports quick hex copying.",
+    "learnings": [
+      "Generated color math values programmatically to ensure color harmony (monochromatic, analogous).",
+      "Utilized the Clipboard API to copy values and display immediate visual feedback.",
+      "Created dynamic styles by setting CSS variables inline inside React components."
+    ],
+    "icon": "Palette",
+    "githubUrl": "https://github.com/sandeep2409-gitch/colour-gen"
+  },
+  {
+    "day": 6,
+    "week": 1,
+    "name": "MARKDUP",
+    "techStack": ["Vue", "Marked.js", "CSS"],
+    "keyFeature": "Real-time markdown compilation and structural rendering.",
+    "folderName": "DAY7 --MARKDOWN PREVIEWER",
+    "runCommand": "npm install && npm run dev",
+    "description": "A split-pane editor allowing users to write standard markdown on the left and see compiled, styled HTML structure rendered live on the right.",
+    "learnings": [
+      "Integrated Marked.js for fast, safe markdown processing.",
+      "Created a synchronized split-pane scroll system utilizing Vue refs.",
+      "Applied DOM sanitization (DOMPurify) to prevent cross-site scripting (XSS) in custom markdown inputs."
+    ],
+    "icon": "FileText",
+    "githubUrl": "https://github.com/sandeep2409-gitch/MARKDUP"
+  },
+  {
+    "day": 7,
+    "week": 1,
+    "name": "trimly",
+    "techStack": ["Node.js", "Express", "MongoDB", "CSS"],
+    "keyFeature": "Generate and redirect short links with custom aliases.",
+    "folderName": "DAY8 --URL SHORTNER",
+    "runCommand": "npm install && npm start",
+    "description": "A backend service exposing REST endpoints to compress long URLs, record redirection click analytics, and support custom back-half naming.",
+    "learnings": [
+      "Built backend routing and controllers using Express.js middleware.",
+      "Created Mongoose schemas and queries to index database records efficiently.",
+      "Validated input parameters (valid URLs, duplicate aliases) on the server."
+    ],
+    "icon": "Link",
+    "githubUrl": "https://github.com/sandeep2409-gitch/trimly"
+  },
+  {
+    "day": 8,
+    "week": 2,
+    "name": "AuraQuotes",
+    "techStack": ["React", "Fetch API", "CSS"],
+    "keyFeature": "Retrieve quotes with author information and share instantly.",
+    "folderName": "DAY9 --QUOTE GENERATOR",
+    "runCommand": "npm install && npm run dev",
+    "description": "A card dashboard that fetches random inspirational quotes from a public API, displays typewriter animations, and facilitates instant sharing via Twitter.",
+    "learnings": [
+      "Handled asynchronous fetch requests, loading states, and error handling in React.",
+      "Implemented CSS transition states and keyframes to handle text replacements gracefully.",
+      "Constructed URL query strings to connect quote details with third-party social share interfaces."
+    ],
+    "icon": "MessageSquare",
+    "githubUrl": "https://github.com/sandeep2409-gitch/AuraQuotes"
+  },
+  {
+    "day": 9,
+    "week": 2,
+    "name": "Canvas-studio",
+    "techStack": ["Canvas API", "Vanilla JS", "CSS"],
+    "keyFeature": "Sketching board with stroke width controls, colors, and image export.",
+    "folderName": "DAY10 -- DRAWING",
+    "runCommand": "open index.html",
+    "description": "A responsive drawing workspace utilizing the HTML5 Canvas API. Features smooth quadratic bezier curves for brush lines, brush presets, and png export.",
+    "learnings": [
+      "Utilized Canvas 2D Context properties (lineJoin, lineCap, beginPath, stroke) for rendering.",
+      "Developed canvas coordinates scaling logic to ensure high-DPI retina display responsiveness.",
+      "Implemented image downloads directly from base64 Canvas data URIs."
+    ],
+    "icon": "PenTool",
+    "githubUrl": "https://github.com/sandeep2409-gitch/Canvas-studio"
+  },
+  {
+    "day": 10,
+    "week": 2,
+    "name": "FortifyGen",
+    "techStack": ["Vue", "CSS"],
+    "keyFeature": "Generate strong, randomized passwords with specific constraints.",
+    "folderName": "DAY11--PASSWORD GENERATOR",
+    "runCommand": "npm install && npm run dev",
+    "description": "A secure utility that builds custom passwords using checkboxes for uppercase, lowercase, numbers, and special symbols, showing an immediate strength score.",
+    "learnings": [
+      "Designed cryptographic-strength random number selectors utilizing window.crypto.getRandomValues.",
+      "Constructed custom password strength metrics based on entropy and dictionary patterns.",
+      "Used Vue dynamic computed properties to update security indicators and warnings."
+    ],
+    "icon": "Key",
+    "githubUrl": "https://github.com/sandeep2409-gitch/FortifyGen"
+  },
+  {
+    "day": 11,
+    "week": 2,
+    "name": "VibeStream",
+    "techStack": ["React", "Spotify API", "CSS"],
+    "keyFeature": "Search songs, manage playlist tracks, and sync directly.",
+    "folderName": "DAY12 -- MUSIC PLAYLIST",
+    "runCommand": "npm install && npm run dev",
+    "description": "A Spotify-linked dashboard that logs users in via OAuth, enables catalog queries, allows customizing track queues, and saves compiled playlists back to user accounts.",
+    "learnings": [
+      "Completed OAuth 2.0 Authorization Code flow with PKCE on client application.",
+      "Handled paginated list queries and headers for the Spotify Web API.",
+      "Designed modular card grids for track search results and playlist builder lists."
+    ],
+    "icon": "Music",
+    "githubUrl": "https://github.com/sandeep2409-gitch/VibeStream"
+  },
+  {
+    "day": 12,
+    "week": 2,
+    "name": "nvidia-nim-chatbot",
+    "techStack": ["React", "CSS Animations"],
+    "keyFeature": "Mock chatbot interface with fluid typing animations and states.",
+    "folderName": "DAY13 -- CHATBOT",
+    "runCommand": "npm install && npm run dev",
+    "description": "A beautiful chat client UI. Demonstrates state-driven animations, message bubble styles, auto-scrolling lists, and mock automated replies.",
+    "learnings": [
+      "Designed dynamic message bubble layouts that support text, links, and quick reply buttons.",
+      "Implemented auto-scroll-to-bottom effects utilizing React useRef and scrollIntoView.",
+      "Created realistic typing-indicator bubble animations using CSS stagger delays."
+    ],
+    "icon": "MessageCircle",
+    "githubUrl": "https://github.com/sandeep2409-gitch/nvidia-nim-chatbot"
+  },
+  {
+    "day": 13,
+    "week": 2,
+    "name": "AuraJournal",
+    "techStack": ["Svelte", "IndexedDB", "CSS"],
+    "keyFeature": "Write entries, tag categories, and save offline in the browser.",
+    "folderName": "DAY14 --DAILY JOURNAL",
+    "runCommand": "npm install && npm run dev",
+    "description": "A minimalist offline journaling workspace. Allows sorting text logs by dates, inserting rich text snippets, and storing all records in the browser's database.",
+    "learnings": [
+      "Acquired fundamental knowledge of Svelte reactivity systems and event dispatching.",
+      "Configured client database queries and transactions utilizing IndexedDB (Dexie.js).",
+      "Created CSS glassmorphism sidebars and calendar cards for fast entry retrieval."
+    ],
+    "icon": "BookOpen",
+    "githubUrl": "https://github.com/sandeep2409-gitch/AuraJournal"
+  },
+  {
+    "day": 14,
+    "week": 2,
+    "name": "AetherNotes",
+    "techStack": ["React", "Firebase Firestore", "Firebase Auth", "CSS"],
+    "keyFeature": "Real-time sync, collaborative editing, and user authentication.",
+    "folderName": "DAY15 --NOTES APP",
+    "runCommand": "npm install && npm run dev",
+    "description": "A full-fledged collaborative note-taking application. Features personal accounts, real-time database syncing, tag organization, and instant editing overlays.",
+    "learnings": [
+      "Integrated Firebase Client SDK to handle user signups, logins, and session states.",
+      "Utilized Cloud Firestore's snapshot listener (onSnapshot) to sync edits across sessions.",
+      "Structured granular database security rules to shield data from unauthorized access."
+    ],
+    "icon": "StickyNote",
+    "githubUrl": "https://github.com/sandeep2409-gitch/AetherNotes"
+  },
+  {
+    "day": 15,
+    "week": 3,
+    "name": "Gitfinderpro",
+    "techStack": ["Node.js", "Express", "GitHub API", "CSS"],
+    "keyFeature": "Search accounts, compile repositories, and compute profile stats.",
+    "folderName": "DAY16 --GITHUB USER FINDER",
+    "runCommand": "npm install && npm start",
+    "description": "A comprehensive search directory. Aggregates GitHub profiles, showcases star counts, lists top languages, and displays repository statistics.",
+    "learnings": [
+      "Managed REST call rate limits by routing requests through a custom Node.js proxy server.",
+      "Structured async helper libraries to fetch and stitch profile details, repos, and language data.",
+      "Built clean, informative UI cards using flexbox alignments and status icons."
+    ],
+    "icon": "Github",
+    "githubUrl": "https://github.com/sandeep2409-gitch/Gitfinderpro"
+  },
+  {
+    "day": 16,
+    "week": 3,
+    "name": "CINIVERSE",
+    "techStack": ["React", "TMDB API", "CSS"],
+    "keyFeature": "Search detailed movie information, user ratings, and details.",
+    "folderName": "DAY17 -- MOVIES SEARCH ENGINEE",
+    "runCommand": "npm install && npm run dev",
+    "description": "An entertainment catalog searching the The Movie Database (TMDB). Features infinite scroll pagination, movie modal overlays, and watchlists.",
+    "learnings": [
+      "Implemented search query debouncing to reduce redundant API queries.",
+      "Created an infinite scrolling observer wrapper using the Intersection Observer API.",
+      "Organized movie details (posters, backdrops, ratings, trailers) in visual grids."
+    ],
+    "icon": "Film",
+    "githubUrl": "https://github.com/sandeep2409-gitch/CINIVERSE"
+  },
+  {
+    "day": 17,
+    "week": 3,
+    "name": "KAIZENDESK",
+    "techStack": ["Vue", "Vuex / Pinia", "CSS"],
+    "keyFeature": "Product catalog, shopping cart modifiers, and checkout flows.",
+    "folderName": "DAY18 -- ECOMMERCE CART",
+    "runCommand": "npm install && npm run dev",
+    "description": "An interactive e-commerce cart. Features product listings, catalog filters, persistent shopping carts, coupon calculations, and checkout processes.",
+    "learnings": [
+      "Mastered central state management in Vue using Pinia/Vuex to avoid prop drilling.",
+      "Implemented robust item counts adjustments, subtotal formulas, and taxes computations.",
+      "Designed dynamic transitions for sliding elements in the checkout drawer."
+    ],
+    "icon": "ShoppingCart",
+    "githubUrl": "https://github.com/sandeep2409-gitch/KAIZENDESK"
+  },
+  {
+    "day": 18,
+    "week": 3,
+    "name": "AuraReads",
+    "techStack": ["Python Flask", "SQLite", "HTML/CSS"],
+    "keyFeature": "Curated database of books with genres search and filters.",
+    "folderName": "DAY19 -- BOOK RECOMENDER",
+    "runCommand": "pip install -r requirements.txt && python app.py",
+    "description": "A database system listing literary works. Allows searching catalog titles, filtering by genres, showing user ratings, and leaving comments.",
+    "learnings": [
+      "Built backend routing and HTML template parsing using Python Flask.",
+      "Designed SQLite database tables, foreign keys relations, and standard SQL queries.",
+      "Integrated backend search routes with visual results layouts."
+    ],
+    "icon": "Bookmark",
+    "githubUrl": "https://github.com/sandeep2409-gitch/AuraReads"
+  },
+  {
+    "day": 19,
+    "week": 3,
+    "name": "BiteDash",
+    "techStack": ["React", "CSS"],
+    "keyFeature": "Browse restaurants, customize orders, and inspect deliveries.",
+    "folderName": "DAY20 -- FOOD APP",
+    "runCommand": "npm install && npm run dev",
+    "description": "A premium prototype UI containing restaurant menus, filtering by cuisines, dish customization overlays, and an animated delivery tracker dashboard.",
+    "learnings": [
+      "Created deep complex forms for configuring dish options (extra toppings, sizes).",
+      "Designed highly responsive card layouts that resize cleanly across mobile, tablets, and desktop.",
+      "Built CSS SVG micro-animations showing delivery status routes in real time."
+    ],
+    "icon": "Utensils",
+    "githubUrl": "https://github.com/sandeep2409-gitch/BiteDash"
+  },
+  {
+    "day": 20,
+    "week": 3,
+    "name": "RECONX",
+    "techStack": ["Node.js", "Express", "Alpha Vantage API", "Chart.js"],
+    "keyFeature": "Real-time stock data dashboard with visual chart tools.",
+    "folderName": "DAY21 -- RECONX",
+    "runCommand": "npm install && npm start",
+    "description": "A financial tracking app. Searches company tickers, collects historical trends data, and draws line charts plotting prices over time.",
+    "learnings": [
+      "Parsed complex, time-series financial databases into clean datasets for UI charting.",
+      "Configured backend caching using memory tables to prevent exceeding public API key limits.",
+      "Designed interactive charts displaying hovering crosshairs and details."
+    ],
+    "icon": "LineChart",
+    "githubUrl": "https://github.com/sandeep2409-gitch/RECONX"
+  },
+  {
+    "day": 21,
+    "week": 3,
+    "name": "DigitPredictionUsingPython",
+    "techStack": ["Python Flask", "TensorFlow", "HTML5 Canvas", "CSS"],
+    "keyFeature": "Draw single digits on a canvas and run predictions using ML models.",
+    "folderName": "DAY22 -- HANDWRITING RECOGINTION",
+    "runCommand": "pip install -r requirements.txt && python app.py",
+    "description": "An interactive machine learning app. Captures hand-drawn coordinates, processes image bitmaps, and uses a pre-trained CNN model to predict the digit.",
+    "learnings": [
+      "Configured pre-processing utilities to downsample, crop, and normalize canvas bitmap arrays.",
+      "Integrated pre-trained TensorFlow/Keras deep learning models within Python Flask.",
+      "Mapped prediction probability matrices to visual confidence bars in the client UI."
+    ],
+    "icon": "Fingerprint",
+    "githubUrl": "https://github.com/sandeep2409-gitch/DigitPredictionUsingPython"
+  },
+  {
+    "day": 22,
+    "week": 4,
+    "name": "ChatHaven",
+    "techStack": ["Node.js", "Socket.io", "Express", "CSS"],
+    "keyFeature": "WebSockets multi-room chat, member logs, and typing signs.",
+    "folderName": "DAY23 --REALTIME CHAT",
+    "runCommand": "npm install && npm start",
+    "description": "A lightning-fast real-time messaging hub. Features separate chatrooms, auto-generated avatars, active user listings, and real-time typing indicators.",
+    "learnings": [
+      "Configured event handling and client-server synchronization using Socket.io.",
+      "Managed active server connections, room allocations, and disconnect events in Node.js.",
+      "Engineered instant message pushes to active windows without any UI lag."
+    ],
+    "icon": "ShieldAlert",
+    "githubUrl": "https://github.com/sandeep2409-gitch/ChatHaven"
+  },
+  {
+    "day": 23,
+    "week": 4,
+    "name": "Aisummerygeneration",
+    "techStack": ["Python Flask", "Hugging Face APIs", "CSS"],
+    "keyFeature": "Paste text summaries, filter, and extract core arguments.",
+    "folderName": "DAY24 -- AI TEXT SUMMARIZER",
+    "runCommand": "pip install -r requirements.txt && python app.py",
+    "description": "A natural language summarizer tool. Leverages pre-trained transformer pipelines to parse, extract, and compile summaries from lengthy inputs.",
+    "learnings": [
+      "Integrated Hugging Face Inference APIs to run remote transformer computations.",
+      "Handled long-running API tasks by integrating client loading states and alerts.",
+      "Optimized text sanitization libraries to remove extra whitespace and characters."
+    ],
+    "icon": "Scissors",
+    "githubUrl": "https://github.com/sandeep2409-gitch/Aisummerygeneration"
+  },
+  {
+    "day": 24,
+    "week": 4,
+    "name": "AtherBoard",
+    "techStack": ["React", "HTML5 Drag and Drop API", "CSS"],
+    "keyFeature": "Trello-like board with custom lists, cards ordering, and edits.",
+    "folderName": "DAY25 -- KANBAN BOARD",
+    "runCommand": "npm install && npm run dev",
+    "description": "A professional task management workspace. Features drag-and-drop tasks, custom column configurations, tag labels, and drag-and-drop animations.",
+    "learnings": [
+      "Mastered the native HTML5 Drag and Drop API event hooks (dragStart, dragOver, drop).",
+      "Re-ordered state arrays immutably inside complex nested React objects.",
+      "Designed dynamic columns layouts that adjust spacing to container dimensions."
+    ],
+    "icon": "Kanban",
+    "githubUrl": "https://github.com/sandeep2409-gitch/AtherBoard"
+  },
+  {
+    "day": 25,
+    "week": 4,
+    "name": "music-visualizer",
+    "techStack": ["Web Audio API", "Three.js", "CSS"],
+    "keyFeature": "Plot frequency analysis to 3D particle meshes in real time.",
+    "folderName": "DAY26 -- MUSIC VISUALIZER",
+    "runCommand": "npm install && npm run dev",
+    "description": "A stunning interactive 3D audio-responsive canvas. Analyzes audio frequencies and maps energy bands to manipulate 3D shapes and particles.",
+    "learnings": [
+      "Configured Web Audio API nodes (AudioContext, AnalyserNode) to read raw buffer data.",
+      "Created 3D renders, vertex shaders, and animation loops using Three.js.",
+      "Mapped decibel levels to animate camera movements and coordinate scales."
+    ],
+    "icon": "Sparkles",
+    "githubUrl": "https://github.com/sandeep2409-gitch/music-visualizer"
+  },
+  {
+    "day": 26,
+    "week": 4,
+    "name": "DevSnippet",
+    "techStack": ["React", "Node.js", "Express", "MongoDB", "CSS"],
+    "keyFeature": "Save code snippet lists, filter by programming languages, and highlights.",
+    "folderName": "DAY27 -- CODE SNIPPET MANAGER",
+    "runCommand": "npm install && npm run dev",
+    "description": "A library for developers. Supports saving snippet code, categorization by syntax languages, full text search, and syntax highlighting.",
+    "learnings": [
+      "Integrated PrismJS/Highlight.js code compilers into React render trees.",
+      "Implemented indexing database regex queries to search within lines of code.",
+      "Engineered instant copy-code layouts and success confirmation overlays."
+    ],
+    "icon": "Code",
+    "githubUrl": "https://github.com/sandeep2409-gitch/DevSnippet"
+  },
+  {
+    "day": 27,
+    "week": 4,
+    "name": "Sentiment-analysis",
+    "techStack": ["Python Flask", "TextBlob NLP", "HTML/CSS"],
+    "keyFeature": "Analyze paragraph sentences and classify mood polarity scores.",
+    "folderName": "DAY28 --SENTIMENT ANALYSIS",
+    "runCommand": "pip install -r requirements.txt && python app.py",
+    "description": "An NLP text dashboard. Inspects input paragraphs and graphs sentiment metrics (positivity, subjectivity, vocabulary usage) using visual dials.",
+    "learnings": [
+      "Configured basic Natural Language Processing classifiers using the TextBlob library.",
+      "Built dynamic SVG gauges showing scores moving between negative, neutral, and positive ranges.",
+      "Handled long sentences input sanitization and tokenization on the Flask backend."
+    ],
+    "icon": "Smile",
+    "githubUrl": "https://github.com/sandeep2409-gitch/Sentiment-analysis"
+  },
+  {
+    "day": 28,
+    "week": 4,
+    "name": "PrimeRealestate",
+    "techStack": ["React", "Node.js", "PostgreSQL", "CSS"],
+    "keyFeature": "Interactive real estate catalog with search, price filters, and details.",
+    "folderName": "DAY29 -- REAL ESTATE PORTAL",
+    "runCommand": "npm install && npm run dev",
+    "description": "A property searching platform. Features detailed filtering (price, beds, location), photo galleries, mock contact agents forms, and listing maps.",
+    "learnings": [
+      "Connected client components with PostgreSQL database queries using node-postgres pg pool.",
+      "Constructed complex multi-parameter database queries supporting ranges and regex sorting.",
+      "Created sleek, slide-out filters menus and dynamic photo slider components."
+    ],
+    "icon": "Home",
+    "githubUrl": "https://github.com/sandeep2409-gitch/PrimeRealestate"
+  }
+]
