@@ -45,7 +45,7 @@ export default function ProjectGrid() {
     { value: 1, label: 'Week 1: Foundations', color: 'var(--accent-w1)' },
     { value: 2, label: 'Week 2: Interactive', color: 'var(--accent-w2)' },
     { value: 3, label: 'Week 3: Full-Stack', color: 'var(--accent-w3)' },
-    { value: 4, label: 'Week 4: Advanced', color: 'var(--accent-w4)' },
+    { value: 4, label: 'Week 4: Advanced & Capstone', color: 'var(--accent-w4)' },
   ];
 
   // Filtering Logic

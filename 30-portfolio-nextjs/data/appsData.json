@@ -53,6 +53,23 @@
   {
     "day": 4,
     "week": 1,
+    "name": "expense-tracker",
+    "techStack": ["React", "Chart.js", "CSS"],
+    "keyFeature": "Premium expense tracker with Chart.js charts and local backup/restore.",
+    "folderName": "DAY4 --EXPENSE TRACKER",
+    "runCommand": "npm install && npm run dev",
+    "description": "A high-fidelity personal finance dashboard and smart budget visualizer. Features modern glassmorphic theme variations, category budget limits with warning progress bars, and CSV/JSON data exporting.",
+    "learnings": [
+      "Integrated Chart.js and react-chartjs-2 for interactive data visualizations.",
+      "Implemented budget threshold alerts with dynamic progress bar color states.",
+      "Handled full JSON backup imports and CSV spreadsheet exports."
+    ],
+    "icon": "TrendingUp",
+    "githubUrl": "https://github.com/sandeep2409-gitch/expense-tracker"
+  },
+  {
+    "day": 5,
+    "week": 1,
     "name": "Countdown-timer",
     "techStack": ["Vanilla JS", "HTML5 Audio", "CSS"],
     "keyFeature": "Pomodoro-style timer with audio warnings and intervals.",
@@ -68,7 +85,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/Countdown-timer"
   },
   {
-    "day": 5,
+    "day": 6,
     "week": 1,
     "name": "colour-gen",
     "techStack": ["React", "CSS", "Clipboard API"],
@@ -85,7 +102,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/colour-gen"
   },
   {
-    "day": 6,
+    "day": 7,
     "week": 1,
     "name": "MARKDUP",
     "techStack": ["Vue", "Marked.js", "CSS"],
@@ -102,8 +119,8 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/MARKDUP"
   },
   {
-    "day": 7,
-    "week": 1,
+    "day": 8,
+    "week": 2,
     "name": "trimly",
     "techStack": ["Node.js", "Express", "MongoDB", "CSS"],
     "keyFeature": "Generate and redirect short links with custom aliases.",
@@ -119,7 +136,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/trimly"
   },
   {
-    "day": 8,
+    "day": 9,
     "week": 2,
     "name": "AuraQuotes",
     "techStack": ["React", "Fetch API", "CSS"],
@@ -136,7 +153,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/AuraQuotes"
   },
   {
-    "day": 9,
+    "day": 10,
     "week": 2,
     "name": "Canvas-studio",
     "techStack": ["Canvas API", "Vanilla JS", "CSS"],
@@ -153,7 +170,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/Canvas-studio"
   },
   {
-    "day": 10,
+    "day": 11,
     "week": 2,
     "name": "FortifyGen",
     "techStack": ["Vue", "CSS"],
@@ -170,7 +187,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/FortifyGen"
   },
   {
-    "day": 11,
+    "day": 12,
     "week": 2,
     "name": "VibeStream",
     "techStack": ["React", "Spotify API", "CSS"],
@@ -187,7 +204,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/VibeStream"
   },
   {
-    "day": 12,
+    "day": 13,
     "week": 2,
     "name": "nvidia-nim-chatbot",
     "techStack": ["React", "CSS Animations"],
@@ -196,7 +213,7 @@
     "runCommand": "npm install && npm run dev",
     "description": "A beautiful chat client UI. Demonstrates state-driven animations, message bubble styles, auto-scrolling lists, and mock automated replies.",
     "learnings": [
-      "Designed dynamic message bubble layouts that support text, links, and quick reply buttons.",
+      "Design dynamic message bubble layouts that support text, links, and quick reply buttons.",
       "Implemented auto-scroll-to-bottom effects utilizing React useRef and scrollIntoView.",
       "Created realistic typing-indicator bubble animations using CSS stagger delays."
     ],
@@ -204,7 +221,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/nvidia-nim-chatbot"
   },
   {
-    "day": 13,
+    "day": 14,
     "week": 2,
     "name": "AuraJournal",
     "techStack": ["Svelte", "IndexedDB", "CSS"],
@@ -221,8 +238,8 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/AuraJournal"
   },
   {
-    "day": 14,
-    "week": 2,
+    "day": 15,
+    "week": 3,
     "name": "AetherNotes",
     "techStack": ["React", "Firebase Firestore", "Firebase Auth", "CSS"],
     "keyFeature": "Real-time sync, collaborative editing, and user authentication.",
@@ -238,7 +255,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/AetherNotes"
   },
   {
-    "day": 15,
+    "day": 16,
     "week": 3,
     "name": "Gitfinderpro",
     "techStack": ["Node.js", "Express", "GitHub API", "CSS"],
@@ -255,7 +272,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/Gitfinderpro"
   },
   {
-    "day": 16,
+    "day": 17,
     "week": 3,
     "name": "CINIVERSE",
     "techStack": ["React", "TMDB API", "CSS"],
@@ -272,7 +289,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/CINIVERSE"
   },
   {
-    "day": 17,
+    "day": 18,
     "week": 3,
     "name": "KAIZENDESK",
     "techStack": ["Vue", "Vuex / Pinia", "CSS"],
@@ -289,7 +306,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/KAIZENDESK"
   },
   {
-    "day": 18,
+    "day": 19,
     "week": 3,
     "name": "AuraReads",
     "techStack": ["Python Flask", "SQLite", "HTML/CSS"],
@@ -306,7 +323,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/AuraReads"
   },
   {
-    "day": 19,
+    "day": 20,
     "week": 3,
     "name": "BiteDash",
     "techStack": ["React", "CSS"],
@@ -323,7 +340,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/BiteDash"
   },
   {
-    "day": 20,
+    "day": 21,
     "week": 3,
     "name": "RECONX",
     "techStack": ["Node.js", "Express", "Alpha Vantage API", "Chart.js"],
@@ -340,8 +357,8 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/RECONX"
   },
   {
-    "day": 21,
-    "week": 3,
+    "day": 22,
+    "week": 4,
     "name": "DigitPredictionUsingPython",
     "techStack": ["Python Flask", "TensorFlow", "HTML5 Canvas", "CSS"],
     "keyFeature": "Draw single digits on a canvas and run predictions using ML models.",
@@ -357,7 +374,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/DigitPredictionUsingPython"
   },
   {
-    "day": 22,
+    "day": 23,
     "week": 4,
     "name": "ChatHaven",
     "techStack": ["Node.js", "Socket.io", "Express", "CSS"],
@@ -370,11 +387,11 @@
       "Managed active server connections, room allocations, and disconnect events in Node.js.",
       "Engineered instant message pushes to active windows without any UI lag."
     ],
-    "icon": "ShieldAlert",
+    "icon": "MessageCircle",
     "githubUrl": "https://github.com/sandeep2409-gitch/ChatHaven"
   },
   {
-    "day": 23,
+    "day": 24,
     "week": 4,
     "name": "Aisummerygeneration",
     "techStack": ["Python Flask", "Hugging Face APIs", "CSS"],
@@ -391,7 +408,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/Aisummerygeneration"
   },
   {
-    "day": 24,
+    "day": 25,
     "week": 4,
     "name": "AtherBoard",
     "techStack": ["React", "HTML5 Drag and Drop API", "CSS"],
@@ -408,7 +425,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/AtherBoard"
   },
   {
-    "day": 25,
+    "day": 26,
     "week": 4,
     "name": "music-visualizer",
     "techStack": ["Web Audio API", "Three.js", "CSS"],
@@ -425,7 +442,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/music-visualizer"
   },
   {
-    "day": 26,
+    "day": 27,
     "week": 4,
     "name": "DevSnippet",
     "techStack": ["React", "Node.js", "Express", "MongoDB", "CSS"],
@@ -442,7 +459,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/DevSnippet"
   },
   {
-    "day": 27,
+    "day": 28,
     "week": 4,
     "name": "Sentiment-analysis",
     "techStack": ["Python Flask", "TextBlob NLP", "HTML/CSS"],
@@ -459,7 +476,7 @@
     "githubUrl": "https://github.com/sandeep2409-gitch/Sentiment-analysis"
   },
   {
-    "day": 28,
+    "day": 29,
     "week": 4,
     "name": "PrimeRealestate",
     "techStack": ["React", "Node.js", "PostgreSQL", "CSS"],
@@ -474,5 +491,22 @@
     ],
     "icon": "Home",
     "githubUrl": "https://github.com/sandeep2409-gitch/PrimeRealestate"
+  },
+  {
+    "day": 30,
+    "week": 4,
+    "name": "30-portfolio-nextjs",
+    "techStack": ["React", "Next.js", "Marked.js", "CSS"],
+    "keyFeature": "Dynamic developer portfolio dashboard aggregating all 29 projects.",
+    "folderName": "30-portfolio-nextjs",
+    "runCommand": "npm install && npm run dev",
+    "description": "The capstone project of the 30-Day challenge. Aggregates all daily challenge progress metrics, technology frequency graphs, and features an inline dynamic Markdown parser.",
+    "learnings": [
+      "Developed an interactive dashboard in Next.js using CSS custom grid configurations.",
+      "Wrote a custom server-side API route handler to fetch and render raw workspace README files.",
+      "Created a robust stats frequency compiler grouping technologies and weekly accomplishments."
+    ],
+    "icon": "Layers",
+    "githubUrl": "https://github.com/sandeep2409-gitch/30DAYSCHALLENGE"
   }
 ]

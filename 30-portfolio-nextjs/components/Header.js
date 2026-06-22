@@ -21,9 +21,9 @@ const GithubIcon = ({ size = 16, ...props }) => (
 
 export default function Header() {
   const stats = [
-    { label: 'Completed Apps', value: '28 / 28', icon: Trophy, color: 'var(--primary)' },
-    { label: 'Weeks of Code', value: '4 Weeks', icon: Calendar, color: 'var(--accent-w2)' },
-    { label: 'Tech Stack Variety', value: '12+ Techs', icon: Cpu, color: 'var(--accent-w3)' },
+    { label: 'Completed Apps', value: '30 / 30', icon: Trophy, color: 'var(--primary)' },
+    { label: 'Weeks of Code', value: '4+ Weeks', icon: Calendar, color: 'var(--accent-w2)' },
+    { label: 'Tech Stack Variety', value: '15+ Techs', icon: Cpu, color: 'var(--accent-w3)' },
     { label: 'Challenge Status', value: '100% Done', icon: Layers, color: 'var(--accent-w1)' },
   ];
 
@@ -68,7 +68,7 @@ export default function Header() {
           fontFamily: 'var(--font-sans)',
           marginBottom: '2rem'
         }}>
-          A hands-on journey of building a web application every single day. Explore 28 self-contained apps spanning React, Vue, Svelte, Flask, WebSockets, Canvas, and Machine Learning.
+          A hands-on journey of building a web application every single day. Explore 29 daily web applications capping off with the Day 30 portfolio dashboard, spanning React, Vue, Svelte, Flask, WebSockets, Canvas, and Machine Learning.
         </p>
         
         {/* GitHub Repository Redirection Button */}
